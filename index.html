@@ -11,6 +11,40 @@
         body { font-family: 'Noto Sans JP', sans-serif; }
         .serif { font-family: 'Noto Serif JP', serif; }
     </style>
+
+    <!-- 検索エンジン向けの構造化データ（ローカルビジネス/法律事務所） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "久松法律事務所",
+      "image": "logo.png",
+      "url": "",
+      "telephone": "050-5527-3813",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "北浜3丁目2番25号 京阪淀屋橋ビル8階",
+        "addressLocality": "大阪市中央区",
+        "addressRegion": "大阪府",
+        "postalCode": "541-0041",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.694384,
+        "longitude": 135.500271
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "priceRange": "￥￥"
+    }
+    </script>
 </head>
 <body class="bg-orange-50 text-gray-800">
 
