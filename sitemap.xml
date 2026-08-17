@@ -4,7 +4,7 @@
 
   <url>
        <loc>https://hisamatsulaw.github.io/</loc>
-       <lastmod>2026-08-10T07:34:03+00:00</lastmod>
+       <lastmod>2026-08-17T00:00:00+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>1.0000</priority>
   </url>
@@ -20,11 +20,12 @@
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
   </url>
+  <!-- 例：事務所概要ページを追加する場合 -->
   <url>
-       <loc>https://hisamatsulaw.github.io/index.html</loc>
-       <lastmod>2026-08-10T07:34:03+00:00</lastmod>
+       <loc>https://hisamatsulaw.github.io/outline.html</loc>
+       <lastmod>2026-08-17T00:00:00+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+       <priority>0.8000</priority>
   </url>
   <url>
        <loc>https://hisamatsulaw.github.io/column-outsourcing.html</loc>
