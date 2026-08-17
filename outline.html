@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事務所概要 ｜ 久松法律事務所</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .serif { font-family: 'Noto Serif JP', serif; }
+    </style>
+</head>
+<body class="bg-orange-50 text-gray-800">
+
+    <!-- ナビゲーション -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-orange-900 serif">久松法律事務所</a>
+            <a href="index.html" class="text-sm font-bold text-orange-900 hover:text-orange-600 border-b border-orange-900">HOMEに戻る</a>
+        </nav>
+    </header>
+
+    <main class="py-16 max-w-4xl mx-auto px-6">
+        <h1 class="text-4xl font-bold text-center mb-12 text-orange-900 serif">事務所概要</h1>
+        
+        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-orange-100">
+            
+            <!-- 理念セクション -->
+            <section class="mb-12 border-b border-orange-100 pb-12">
+                <h2 class="text-2xl font-bold text-orange-900 mb-6 serif">事務所理念</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    当事務所は、相談者様一人ひとりの抱える問題に対し、迅速かつ丁寧な対応を心がけております。<br>
+                    複雑な法的手続きを分かりやすく解説し、最善の解決策を共に導き出すパートナーとして、誠実に取り組んでまいります。
+                </p>
+            </section>
+
+            <!-- 基本情報テーブル -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold text-orange-900 mb-6 serif">基本情報</h2>
+                <table class="w-full text-left">
+                    <tbody class="divide-y divide-orange-100">
+                        <tr><th class="py-4 pr-4 font-bold text-orange-900 w-1/3">事務所名</th><td class="py-4 text-gray-700">久松法律事務所</td></tr>
+                        <tr><th class="py-4 pr-4 font-bold text-orange-900">代表弁護士</th><td class="py-4 text-gray-700">久松 大介</td></tr>
+                        <tr><th class="py-4 pr-4 font-bold text-orange-900">所属弁護士会</th><td class="py-4 text-gray-700">大阪弁護士会</td></tr>
+                        <tr><th class="py-4 pr-4 font-bold text-orange-900">所在地</th><td class="py-4 text-gray-700">〒541-0041<br>大阪市中央区北浜3丁目2番25号<br>京阪淀屋橋ビル8階</td></tr>
+                        <tr><th class="py-4 pr-4 font-bold text-orange-900">電話番号</th><td class="py-4 text-gray-700"><a href="tel:05055273813" class="text-orange-800 hover:underline">050-5527-3813</a></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 取扱業務セクション -->
+            <section class="mb-12 bg-orange-50 p-6 rounded-2xl">
+                <h2 class="text-2xl font-bold text-orange-900 mb-6 serif">主な取扱業務</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+                    <li class="flex items-center"><span class="mr-2 text-orange-600">●</span> 民事事件（損害賠償・契約トラブル等）</li>
+                    <li class="flex items-center"><span class="mr-2 text-orange-600">●</span> 企業法務（顧問弁護士・規約作成等）</li>
+                    <li class="flex items-center"><span class="mr-2 text-orange-600">●</span> 相続・遺言（遺産分割・成年後見）</li>
+                    <li class="flex items-center"><span class="mr-2 text-orange-600">●</span> 労働問題（解雇・残業代請求等）</li>
+                </ul>
+            </section>
+
+            <!-- アクセスセクション -->
+            <section>
+                <h2 class="text-2xl font-bold text-orange-900 mb-6 serif">アクセス</h2>
+                <div class="relative w-full h-80 overflow-hidden rounded-2xl mb-6 shadow-md">
+                    <!-- index.htmlで使っているマップのiframeをここに貼ってください -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.5315741650966!2d135.50056657635238!3d34.69177007292282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6e658a4ebc7%3A0x2c5f71a787c26009!2z5LmF5p2-5rOV5b6L5LqL5YuZ5omA!5e0!3m2!1sja!2sjp!4v1786968244488!5m2!1sja!2sjp" class="absolute top-0 left-0 w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <p class="text-gray-700">
+                    京阪電車・大阪メトロ御堂筋線「淀屋橋駅」より徒歩すぐ。<br>
+                    アクセスの詳細については、お電話にてお問い合わせください。
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-center py-8 text-sm text-gray-500">
+        &copy; Hisamatsu Law Office. All Rights Reserved.
+    </footer>
+</body>
+</html>
