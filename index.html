@@ -54,22 +54,40 @@
 <body class="bg-orange-50 text-gray-800">
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
-       <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        <!-- ロゴ画像を挿入（リンク付き） -->
-        <a href="#home">
-            <img src="logo.png" alt="久松法律事務所" class="h-8 w-auto">
-        </a>
-        <div class="hidden md:flex space-x-6 text-sm font-bold text-orange-900">
-                <a href="#home" class="hover:text-orange-600 transition">HOME</a>
-                <a href="#about" class="hover:text-orange-600 transition">弁護士紹介</a>
-                <a href="#services" class="hover:text-orange-600 transition">取扱分野</a>
-                <a href="#news" class="hover:text-orange-600 transition">最新情報</a>
-                <a href="#fee" class="hover:text-orange-600 transition">料金案内</a>
-                <a href="#outline" class="hover:text-orange-600 transition">事務所概要</a>
-                <a href="#contact" class="hover:text-orange-600 transition">お問い合わせ</a>
-            </div>
-        </nav>
-    </header>
+    <nav class="max-w-5xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+        <!-- ロゴ部分 -->
+        <div class="w-full md:w-auto flex justify-between items-center">
+            <a href="#home">
+                <img src="logo.png" alt="久松法律事務所" class="h-7 md:h-8 w-auto">
+            </a>
+            <!-- （もし将来ハンバーガーボタンを置く場合はここに配置します） -->
+        </div>
+
+        <!-- PC用メニュー（中画面以上で表示） -->
+        <div class="hidden md:flex space-x-6 text-sm font-bold text-orange-900 mt-2 md:mt-0">
+            <a href="#home" class="hover:text-orange-600 transition">HOME</a>
+            <a href="#about" class="hover:text-orange-600 transition">弁護士紹介</a>
+            <a href="#services" class="hover:text-orange-600 transition">取扱分野</a>
+            <a href="#news" class="hover:text-orange-600 transition">最新情報</a>
+            <a href="#fee" class="hover:text-orange-600 transition">料金案内</a>
+            <a href="#outline" class="hover:text-orange-600 transition">事務所概要</a>
+            <a href="#contact" class="hover:text-orange-600 transition">お問い合わせ</a>
+        </div>
+    </nav>
+
+    <!-- スマホ用スクロールメニュー（スマホ画面でのみ横スクロールで表示） -->
+    <div class="md:hidden bg-white border-t border-orange-100 overflow-x-auto whitespace-nowrap px-4 py-2 text-xs font-bold text-orange-900">
+        <div class="flex space-x-4">
+            <a href="#home" class="hover:text-orange-600 transition px-2 py-1">HOME</a>
+            <a href="#about" class="hover:text-orange-600 transition px-2 py-1">弁護士紹介</a>
+            <a href="#services" class="hover:text-orange-600 transition px-2 py-1">取扱分野</a>
+            <a href="#news" class="hover:text-orange-600 transition px-2 py-1">最新情報</a>
+            <a href="#fee" class="hover:text-orange-600 transition px-2 py-1">料金案内</a>
+            <a href="#outline" class="hover:text-orange-600 transition px-2 py-1">事務所概要</a>
+            <a href="#contact" class="hover:text-orange-600 transition px-2 py-1">お問い合わせ</a>
+        </div>
+    </div>
+</header>
 
     <section id="home" class="py-24 bg-orange-100 text-orange-950 text-center">
         <div class="max-w-3xl mx-auto px-6">
