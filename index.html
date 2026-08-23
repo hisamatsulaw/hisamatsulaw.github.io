@@ -359,8 +359,19 @@
         </div>
     </section>
 
-    <footer class="py-8 bg-white border-t border-orange-100 text-center text-orange-700 text-xs">
-        <div class="mb-4">
+    <footer class="py-12 bg-white border-t border-orange-100 text-center text-orange-900 text-xs">
+        <!-- フッター用の事務所情報エリア -->
+        <div class="max-w-4xl mx-auto px-6 mb-8 text-left md:text-center">
+            <div class="font-bold text-sm text-orange-950 mb-2">久松法律事務所</div>
+            <p class="text-gray-600 mb-1">〒541-0041 大阪市中央区北浜3丁目2-25 京阪淀屋橋ビル8階</p>
+            <p class="text-gray-600 mb-1">京阪電車・大阪メトロ御堂筋線「淀屋橋駅」すぐ</p>
+            <p class="text-gray-600 mb-3">営業時間：10:00〜20:00（定休日：火曜・土日不定休）</p>
+            <p class="font-bold text-sm">
+                TEL : <a href="tel:05055273813" class="text-orange-700 hover:underline">050-5527-3813</a>
+            </p>
+        </div>
+
+        <div class="mb-4 pt-4 border-t border-orange-100">
             <a href="https://www.instagram.com/hisamatsu_law_office/" target="_blank" rel="noopener noreferrer" class="inline-block text-pink-600 font-bold hover:underline">
                 公式Instagramアカウントはこちら &rarr;
             </a>
@@ -368,5 +379,23 @@
         &copy; 久松法律事務所 All Rights Reserved.
     </footer>
 <script src="https://elfsightcdn.com/platform.js" async></script>
+<!-- スマホ専用：画面下部固定の問い合わせバー（PCでは非表示：hidden） -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur border-t border-orange-200 p-2.5 z-50 flex gap-2 shadow-lg">
+        <a href="tel:05055273813" class="flex-1 bg-orange-900 text-white font-bold py-2.5 px-3 rounded-xl text-center text-xs flex items-center justify-center gap-1 shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            電話で相談
+        </a>
+        <a href="#contact" class="flex-1 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white font-bold py-2.5 px-3 rounded-xl text-center text-xs flex items-center justify-center gap-1 shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Web・DM相談
+        </a>
+    </div>
+
+    <!-- スマホで固定バーを表示した際、コンテンツの最下部が隠れないようにするための余白調整 -->
+    <div class="md:hidden h-16"></div>
 </body>
 </html>
