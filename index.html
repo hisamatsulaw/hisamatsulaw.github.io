@@ -70,20 +70,20 @@
                 </a>
             </div>
 
-            <!-- PC用メニュー（営業カレンダーリンクを追加） -->
+            <!-- PC用メニュー -->
             <div class="hidden md:flex space-x-6 text-sm font-bold text-orange-900 mt-2 md:mt-0">
                 <a href="#home" class="hover:text-orange-600 transition">HOME</a>
                 <a href="#about" class="hover:text-orange-600 transition">弁護士紹介</a>
                 <a href="#services" class="hover:text-orange-600 transition">取扱分野</a>
                 <a href="#news" class="hover:text-orange-600 transition">最新情報</a>
                 <a href="#fee" class="hover:text-orange-600 transition">料金案内</a>
-                <a href="#calendar" class="hover:text-orange-600 transition">営業日カレンダー</a>
+                <a href="#calendar" class="hover:text-orange-600 transition">営業カレンダー</a>
                 <a href="#outline" class="hover:text-orange-600 transition">事務所概要</a>
                 <a href="#contact" class="hover:text-orange-600 transition">お問い合わせ</a>
             </div>
         </nav>
 
-        <!-- スマホ用スクロールメニュー（営業カレンダーリンクを追加） -->
+        <!-- スマホ用スクロールメニュー -->
         <div class="md:hidden bg-white border-t border-orange-100 overflow-x-auto whitespace-nowrap px-4 py-2.5 text-xs font-bold text-orange-900 no-scrollbar">
             <div class="flex space-x-4">
                 <a href="#home" class="hover:text-orange-600 transition px-2 py-1">HOME</a>
@@ -194,7 +194,7 @@
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-orange-100">
                     <h3 class="text-xl font-bold text-orange-900 mb-4">相続・遺言</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        遺産分割協議や遺言書の作成など、円滑な相続手続きをお手伝いいたします。
+                        遺言書の作成や遺産分割協議など、円滑な相続手続きをお手伝いいたします。
                     </p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-orange-100 md:col-span-2">
@@ -250,7 +250,7 @@
         </div>
     </section>
 
-    <!-- 営業日カレンダー（新設） -->
+    <!-- 営業日カレンダー（自動判定ロジック組み込み） -->
     <section id="calendar" class="py-20 bg-orange-50">
         <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-4 text-orange-900 serif">営業日カレンダー</h2>
@@ -273,15 +273,13 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // --------------------------------------------------
-        // 【手動設定エリア】日付を "YYYY-MM-DD" で指定します
-        // --------------------------------------------------
+        // 祝日や年末年始などの特別休業日・特別営業日を手動指定したい場合のみ記述（"YYYY-MM-DD"形式）
         const extraClosedDays = [
-            // 例: "2026-10-10", // 土曜日だけど臨時休業にする場合など
+            // 例: "2026-12-30",
         ];
 
         const extraOpenDays = [
-            // 例: "2026-10-11", // 日曜日だけど臨時営業にする場合など
+            // 例: "2026-05-05",
         ];
 
         const container = document.getElementById("calendar-container");
@@ -333,9 +331,39 @@
                 const formattedDay = String(day).padStart(2, '0');
                 const dateString = `${year}-${formattedMonth}-${formattedDay}`;
 
-                // 火曜（定休）および土日（不定休）を初期休業判定
-                let isClosed = (currentDay === 2 || currentDay === 0 || currentDay === 6);
-                
+                // --- 休業日の判定ロジック ---
+                let isClosed = false;
+
+                // 1. 毎週火曜日 (Day 2) は休業
+                if (currentDay === 2) {
+                    isClosed = true;
+                }
+                // 2. 土曜日 (Day 6) の判定：第2・第4土曜日は休業
+                else if (currentDay === 6) {
+                    const nthWeek = Math.ceil(day / 7);
+                    if (nthWeek === 2 || nthWeek === 4) {
+                        isClosed = true;
+                    }
+                }
+                // 3. 日曜日 (Day 0) の判定：直前の土曜日（＝前日）が第1・第3・第5土曜日の場合は休業
+                else if (currentDay === 0) {
+                    const prevSaturdayDay = day - 1;
+                    if (prevSaturdayDay > 0) {
+                        const saturdayNthWeek = Math.ceil(prevSaturdayDay / 7);
+                        if (saturdayNthWeek === 1 || saturdayNthWeek === 3 || saturdayNthWeek === 5) {
+                            isClosed = true;
+                        }
+                    } else {
+                        // 日曜日が1日の場合、前月最終日の土曜日が第何土曜日か計算
+                        const prevMonthLastDate = new Date(year, month, 0).getDate();
+                        const prevSaturdayNthWeek = Math.ceil(prevMonthLastDate / 7);
+                        if (prevSaturdayNthWeek === 1 || prevSaturdayNthWeek === 3 || prevSaturdayNthWeek === 5) {
+                            isClosed = true;
+                        }
+                    }
+                }
+
+                // 4. 個別手動設定の上書き判定
                 if (extraClosedDays.includes(dateString)) {
                     isClosed = true;
                 } else if (extraOpenDays.includes(dateString)) {
